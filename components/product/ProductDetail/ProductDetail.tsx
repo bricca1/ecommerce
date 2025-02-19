@@ -25,11 +25,15 @@ export const ProductDetail: React.FC<ProductDetailProps> = ({ product }) => {
         >
           ← Volver
         </Button>
-        <div className="px-4 space-y-4">
+        <div className="px-4 space-y-4 items-center">
           <h1 className="text-lg font-medium">{product.titulo}</h1>
-          <div className="flex items-center gap-2">
-            <Rating value={product.rating} />
-            <span className="text-sm">{product.rating}</span>
+          <div className="flex flex-row items-center justify-between gap-2">
+            <p className="text-xl font-medium">${product.precio.toFixed(2)}</p>
+            <div className='flex flex-row items-center'>
+              <Rating value={product.rating} />
+              <span className="text-sm ml-2 ">{product.rating}</span>
+            </div>
+
           </div>
           <div className="aspect-square w-full relative">
             <img
